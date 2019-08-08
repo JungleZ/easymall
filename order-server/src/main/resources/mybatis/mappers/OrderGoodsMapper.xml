@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tedu.mapper.OrderGoodsMapper" >
+  <resultMap id="BaseResultMap" type="cn.tedu.pojo.OrderGoods" >
+    <result column="order_id" property="orderId" jdbcType="VARCHAR" />
+    <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="total" property="total" jdbcType="BIGINT" />
+    <result column="unit_price" property="unitPrice" jdbcType="BIGINT" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.tedu.pojo.OrderGoods" >
+    insert into tb_order_goods (order_id, goods_id, num, 
+      total, unit_price, img, 
+      created, updated)
+    values (#{orderId,jdbcType=VARCHAR}, #{goodsId,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, 
+      #{total,jdbcType=BIGINT}, #{unitPrice,jdbcType=BIGINT}, #{img,jdbcType=VARCHAR}, 
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.tedu.pojo.OrderGoods" >
+    insert into tb_order_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="total != null" >
+        total,
+      </if>
+      <if test="unitPrice != null" >
+        unit_price,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=BIGINT},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=BIGINT},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

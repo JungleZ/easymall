@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.ReceiverMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.Receiver" >
+        <result column="id" property="id" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="tel" property="tel" jdbcType="VARCHAR" />
+        <result column="province" property="province" jdbcType="VARCHAR" />
+        <result column="city" property="city" jdbcType="VARCHAR" />
+        <result column="district" property="district" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="postal" property="postal" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+        <result column="user_id" property="userId" jdbcType="BIGINT" />
+    </resultMap>
+    <insert id="insert" parameterType="cn.tedu.pojo.Receiver" >
+        insert into tb_receiver (id, name, tel,
+        province, city, district,
+        address, postal, created,
+        updated, user_id)
+        values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR},
+        #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR}, #{postal,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP},
+        #{updated,jdbcType=TIMESTAMP}, #{userId,jdbcType=BIGINT})
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.Receiver" >
+        insert into tb_receiver
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="tel != null" >
+                tel,
+            </if>
+            <if test="province != null" >
+                province,
+            </if>
+            <if test="city != null" >
+                city,
+            </if>
+            <if test="district != null" >
+                district,
+            </if>
+            <if test="address != null" >
+                address,
+            </if>
+            <if test="postal != null" >
+                postal,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="tel != null" >
+                #{tel,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="district != null" >
+                #{district,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null" >
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="postal != null" >
+                #{postal,jdbcType=VARCHAR},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

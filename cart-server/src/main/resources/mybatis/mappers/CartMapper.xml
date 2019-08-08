@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.CartMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.Cart">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="item_id" jdbcType="BIGINT" property="itemId" />
+        <result column="item_title" jdbcType="VARCHAR" property="itemTitle" />
+        <result column="item_image" jdbcType="VARCHAR" property="itemImage" />
+        <result column="item_price" jdbcType="BIGINT" property="itemPrice" />
+        <result column="num" jdbcType="INTEGER" property="num" />
+        <result column="created" jdbcType="TIMESTAMP" property="created" />
+        <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+    </resultMap>
+    <insert id="insert" parameterType="cn.tedu.pojo.Cart">
+        insert into tb_cart (id, user_id, item_id,
+        item_title, item_image, item_price,
+        num, created, updated
+        )
+        values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{itemId,jdbcType=BIGINT},
+        #{itemTitle,jdbcType=VARCHAR}, #{itemImage,jdbcType=VARCHAR}, #{itemPrice,jdbcType=BIGINT},
+        #{num,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.Cart">
+        insert into tb_cart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="itemId != null">
+                item_id,
+            </if>
+            <if test="itemTitle != null">
+                item_title,
+            </if>
+            <if test="itemImage != null">
+                item_image,
+            </if>
+            <if test="itemPrice != null">
+                item_price,
+            </if>
+            <if test="num != null">
+                num,
+            </if>
+            <if test="created != null">
+                created,
+            </if>
+            <if test="updated != null">
+                updated,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="itemId != null">
+                #{itemId,jdbcType=BIGINT},
+            </if>
+            <if test="itemTitle != null">
+                #{itemTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="itemImage != null">
+                #{itemImage,jdbcType=VARCHAR},
+            </if>
+            <if test="itemPrice != null">
+                #{itemPrice,jdbcType=BIGINT},
+            </if>
+            <if test="num != null">
+                #{num,jdbcType=INTEGER},
+            </if>
+            <if test="created != null">
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null">
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <!--<resultMap id="BaseResultMap" type="cn.tedu.pojo.Cart">-->
+        <!--<result column="id" jdbcType="VARCHAR" property="id" />-->
+        <!--<result column="user_id" jdbcType="BIGINT" property="userId" />-->
+        <!--<result column="goods_id" jdbcType="BIGINT" property="goodsId" />-->
+        <!--<result column="num" jdbcType="INTEGER" property="num" />-->
+        <!--<result column="created" jdbcType="TIMESTAMP" property="created" />-->
+        <!--<result column="updated" jdbcType="TIMESTAMP" property="updated" />-->
+    <!--</resultMap>-->
+    <!--<insert id="insert" parameterType="cn.tedu.pojo.Cart">-->
+        <!--insert into tb_cart (id, user_id, goods_id,-->
+        <!--num, created, updated-->
+        <!--)-->
+        <!--values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT},-->
+        <!--#{num,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}-->
+        <!--)-->
+    <!--</insert>-->
+    <!--<insert id="insertSelective" parameterType="cn.tedu.pojo.Cart">-->
+        <!--insert into tb_cart-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+            <!--<if test="id != null">-->
+                <!--id,-->
+            <!--</if>-->
+            <!--<if test="userId != null">-->
+                <!--user_id,-->
+            <!--</if>-->
+            <!--<if test="goodsId != null">-->
+                <!--goods_id,-->
+            <!--</if>-->
+            <!--<if test="num != null">-->
+                <!--num,-->
+            <!--</if>-->
+            <!--<if test="created != null">-->
+                <!--created,-->
+            <!--</if>-->
+            <!--<if test="updated != null">-->
+                <!--updated,-->
+            <!--</if>-->
+        <!--</trim>-->
+        <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+            <!--<if test="id != null">-->
+                <!--#{id,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="userId != null">-->
+                <!--#{userId,jdbcType=BIGINT},-->
+            <!--</if>-->
+            <!--<if test="goodsId != null">-->
+                <!--#{goodsId,jdbcType=BIGINT},-->
+            <!--</if>-->
+            <!--<if test="num != null">-->
+                <!--#{num,jdbcType=INTEGER},-->
+            <!--</if>-->
+            <!--<if test="created != null">-->
+                <!--#{created,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+            <!--<if test="updated != null">-->
+                <!--#{updated,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+        <!--</trim>-->
+    <!--</insert>-->
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

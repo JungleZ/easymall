@@ -12,7 +12,8 @@ public class MD5Util {
 			byte[] secretBytes = null;
 			try {
 				//getInstance("md5"):返回实现指定摘要算法�? MessageDigest 对象
-				//digest(byte[] ..)使用指定�? byte 数组对摘要进行最后更新，然后完成摘要计算
+				//digest(byte[] ..)使用指定
+				// ? byte 数组对摘要进行最后更新，然后完成摘要计算
 				secretBytes = MessageDigest.getInstance("md5").digest(
 						plainText.getBytes());
 			} catch (NoSuchAlgorithmException e) {

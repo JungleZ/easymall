@@ -11,7 +11,16 @@
 		<module>common-resources</module>
 		<module>zuul01</module>
 		<module>zuul02</module>
-	</modules>
+		<module>user-server</module>
+        <module>goods-server</module>
+        <module>cart-server</module>
+		<module>order-server</module>
+        <module>coupon-server</module>
+        <module>menber-server</module>
+		<module>receiver-server</module>
+        <module>redisconfig</module>
+
+    </modules>
 	<packaging>pom</packaging>
 
   <name>easymall-parent</name>
@@ -70,6 +79,13 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!--引入druid数据源 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.12</version>
 		</dependency>
 
 	</dependencies>

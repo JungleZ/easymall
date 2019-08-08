@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.CartJsonMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.GoodsCat" >
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="is_parent" property="isParent" jdbcType="TINYINT" />
+        <result column="sort_order" property="sortOrder" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="insert" parameterType="cn.tedu.pojo.GoodsCat" >
+        insert into tb_goods_cat (id, parent_id, name,
+        status, is_parent, sort_order,
+        created, updated)
+        values (#{id,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+        #{status,jdbcType=TINYINT}, #{isParent,jdbcType=TINYINT}, #{sortOrder,jdbcType=TINYINT},
+        #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.GoodsCat" >
+        insert into tb_goods_cat
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="parentId != null" >
+                parent_id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="isParent != null" >
+                is_parent,
+            </if>
+            <if test="sortOrder != null" >
+                sort_order,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="parentId != null" >
+                #{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="isParent != null" >
+                #{isParent,jdbcType=TINYINT},
+            </if>
+            <if test="sortOrder != null" >
+                #{sortOrder,jdbcType=TINYINT},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

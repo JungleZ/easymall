@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="cn.tedu.pojo.Order">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="address_from" jdbcType="VARCHAR" property="addressFrom" />
+    <result column="address_to" jdbcType="VARCHAR" property="addressTo" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="sum" jdbcType="INTEGER" property="sum" />
+    <result column="post_money" jdbcType="INTEGER" property="postMoney" />
+    <result column="real_pay" jdbcType="INTEGER" property="realPay" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="consign_time" jdbcType="TIMESTAMP" property="consignTime" />
+    <result column="receipt_time" jdbcType="TIMESTAMP" property="receiptTime" />
+    <result column="closed" jdbcType="TIMESTAMP" property="closed" />
+    <result column="finished" jdbcType="TIMESTAMP" property="finished" />
+    <result column="is_invoice" jdbcType="TINYINT" property="isInvoice" />
+    <result column="invoice_id" jdbcType="VARCHAR" property="invoiceId" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.tedu.pojo.Order">
+    insert into tb_order (id, user_id, receiver, 
+      tel, address_from, address_to, 
+      message, sum, post_money, 
+      real_pay, pay_type, status, 
+      created, updated, pay_time, 
+      consign_time, receipt_time, closed, 
+      finished, is_invoice, invoice_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{receiver,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{addressFrom,jdbcType=VARCHAR}, #{addressTo,jdbcType=VARCHAR}, 
+      #{message,jdbcType=VARCHAR}, #{sum,jdbcType=INTEGER}, #{postMoney,jdbcType=INTEGER}, 
+      #{realPay,jdbcType=INTEGER}, #{payType,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP}, 
+      #{consignTime,jdbcType=TIMESTAMP}, #{receiptTime,jdbcType=TIMESTAMP}, #{closed,jdbcType=TIMESTAMP}, 
+      #{finished,jdbcType=TIMESTAMP}, #{isInvoice,jdbcType=TINYINT}, #{invoiceId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.tedu.pojo.Order">
+    insert into tb_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="receiver != null">
+        receiver,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="addressFrom != null">
+        address_from,
+      </if>
+      <if test="addressTo != null">
+        address_to,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+      <if test="sum != null">
+        sum,
+      </if>
+      <if test="postMoney != null">
+        post_money,
+      </if>
+      <if test="realPay != null">
+        real_pay,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="updated != null">
+        updated,
+      </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
+      <if test="consignTime != null">
+        consign_time,
+      </if>
+      <if test="receiptTime != null">
+        receipt_time,
+      </if>
+      <if test="closed != null">
+        closed,
+      </if>
+      <if test="finished != null">
+        finished,
+      </if>
+      <if test="isInvoice != null">
+        is_invoice,
+      </if>
+      <if test="invoiceId != null">
+        invoice_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiver != null">
+        #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="addressFrom != null">
+        #{addressFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="addressTo != null">
+        #{addressTo,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="sum != null">
+        #{sum,jdbcType=INTEGER},
+      </if>
+      <if test="postMoney != null">
+        #{postMoney,jdbcType=INTEGER},
+      </if>
+      <if test="realPay != null">
+        #{realPay,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="consignTime != null">
+        #{consignTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiptTime != null">
+        #{receiptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="closed != null">
+        #{closed,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finished != null">
+        #{finished,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isInvoice != null">
+        #{isInvoice,jdbcType=TINYINT},
+      </if>
+      <if test="invoiceId != null">
+        #{invoiceId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!--<resultMap id="BaseResultMap" type="cn.tedu.pojo.Order">-->
+    <!--<result column="order_id" jdbcType="VARCHAR" property="orderId" />-->
+    <!--<result column="payment" jdbcType="VARCHAR" property="payment" />-->
+    <!--<result column="payment_type" jdbcType="INTEGER" property="paymentType" />-->
+    <!--<result column="post_fee" jdbcType="VARCHAR" property="postFee" />-->
+    <!--<result column="status" jdbcType="INTEGER" property="status" />-->
+    <!--<result column="created" jdbcType="TIMESTAMP" property="created" />-->
+    <!--<result column="updated" jdbcType="TIMESTAMP" property="updated" />-->
+    <!--<result column="payment_time" jdbcType="TIMESTAMP" property="paymentTime" />-->
+    <!--<result column="consign_time" jdbcType="TIMESTAMP" property="consignTime" />-->
+    <!--<result column="end_time" jdbcType="TIMESTAMP" property="endTime" />-->
+    <!--<result column="close_time" jdbcType="TIMESTAMP" property="closeTime" />-->
+    <!--<result column="shipping_name" jdbcType="VARCHAR" property="shippingName" />-->
+    <!--<result column="shipping_code" jdbcType="VARCHAR" property="shippingCode" />-->
+    <!--<result column="user_id" jdbcType="BIGINT" property="userId" />-->
+    <!--<result column="buyer_message" jdbcType="VARCHAR" property="buyerMessage" />-->
+    <!--<result column="buyer_nick" jdbcType="VARCHAR" property="buyerNick" />-->
+    <!--<result column="buyer_rate" jdbcType="INTEGER" property="buyerRate" />-->
+  <!--</resultMap>-->
+  <!--<insert id="insert" parameterType="cn.tedu.pojo.Order">-->
+    <!--insert into tb_order (order_id, payment, payment_type, -->
+      <!--post_fee, status, created, -->
+      <!--updated, payment_time, consign_time, -->
+      <!--end_time, close_time, shipping_name, -->
+      <!--shipping_code, user_id, buyer_message, -->
+      <!--buyer_nick, buyer_rate)-->
+    <!--values (#{orderId,jdbcType=VARCHAR}, #{payment,jdbcType=VARCHAR}, #{paymentType,jdbcType=INTEGER}, -->
+      <!--#{postFee,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, -->
+      <!--#{updated,jdbcType=TIMESTAMP}, #{paymentTime,jdbcType=TIMESTAMP}, #{consignTime,jdbcType=TIMESTAMP}, -->
+      <!--#{endTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, #{shippingName,jdbcType=VARCHAR}, -->
+      <!--#{shippingCode,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{buyerMessage,jdbcType=VARCHAR}, -->
+      <!--#{buyerNick,jdbcType=VARCHAR}, #{buyerRate,jdbcType=INTEGER})-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" parameterType="cn.tedu.pojo.Order">-->
+    <!--insert into tb_order-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+      <!--<if test="orderId != null">-->
+        <!--order_id,-->
+      <!--</if>-->
+      <!--<if test="payment != null">-->
+        <!--payment,-->
+      <!--</if>-->
+      <!--<if test="paymentType != null">-->
+        <!--payment_type,-->
+      <!--</if>-->
+      <!--<if test="postFee != null">-->
+        <!--post_fee,-->
+      <!--</if>-->
+      <!--<if test="status != null">-->
+        <!--status,-->
+      <!--</if>-->
+      <!--<if test="created != null">-->
+        <!--created,-->
+      <!--</if>-->
+      <!--<if test="updated != null">-->
+        <!--updated,-->
+      <!--</if>-->
+      <!--<if test="paymentTime != null">-->
+        <!--payment_time,-->
+      <!--</if>-->
+      <!--<if test="consignTime != null">-->
+        <!--consign_time,-->
+      <!--</if>-->
+      <!--<if test="endTime != null">-->
+        <!--end_time,-->
+      <!--</if>-->
+      <!--<if test="closeTime != null">-->
+        <!--close_time,-->
+      <!--</if>-->
+      <!--<if test="shippingName != null">-->
+        <!--shipping_name,-->
+      <!--</if>-->
+      <!--<if test="shippingCode != null">-->
+        <!--shipping_code,-->
+      <!--</if>-->
+      <!--<if test="userId != null">-->
+        <!--user_id,-->
+      <!--</if>-->
+      <!--<if test="buyerMessage != null">-->
+        <!--buyer_message,-->
+      <!--</if>-->
+      <!--<if test="buyerNick != null">-->
+        <!--buyer_nick,-->
+      <!--</if>-->
+      <!--<if test="buyerRate != null">-->
+        <!--buyer_rate,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+      <!--<if test="orderId != null">-->
+        <!--#{orderId,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="payment != null">-->
+        <!--#{payment,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="paymentType != null">-->
+        <!--#{paymentType,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="postFee != null">-->
+        <!--#{postFee,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="status != null">-->
+        <!--#{status,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="created != null">-->
+        <!--#{created,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="updated != null">-->
+        <!--#{updated,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="paymentTime != null">-->
+        <!--#{paymentTime,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="consignTime != null">-->
+        <!--#{consignTime,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="endTime != null">-->
+        <!--#{endTime,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="closeTime != null">-->
+        <!--#{closeTime,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="shippingName != null">-->
+        <!--#{shippingName,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="shippingCode != null">-->
+        <!--#{shippingCode,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="userId != null">-->
+        <!--#{userId,jdbcType=BIGINT},-->
+      <!--</if>-->
+      <!--<if test="buyerMessage != null">-->
+        <!--#{buyerMessage,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="buyerNick != null">-->
+        <!--#{buyerNick,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="buyerRate != null">-->
+        <!--#{buyerRate,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+</mapper>

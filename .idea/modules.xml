@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cart-server/cart-server.iml" filepath="$PROJECT_DIR$/cart-server/cart-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/common-resources/common-resources.iml" filepath="$PROJECT_DIR$/common-resources/common-resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon-server/coupon-server.iml" filepath="$PROJECT_DIR$/coupon-server/coupon-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/easymall.iml" filepath="$PROJECT_DIR$/.idea/easymall.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurake-server1/eurake-server1.iml" filepath="$PROJECT_DIR$/eurake-server1/eurake-server1.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurake-server2/eurake-server2.iml" filepath="$PROJECT_DIR$/eurake-server2/eurake-server2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goods-server/goods-server.iml" filepath="$PROJECT_DIR$/goods-server/goods-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menber-server/menber-server.iml" filepath="$PROJECT_DIR$/menber-server/menber-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-server/order-server.iml" filepath="$PROJECT_DIR$/order-server/order-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/receiver-server/receiver-server.iml" filepath="$PROJECT_DIR$/receiver-server/receiver-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redisconfig/redisconfig.iml" filepath="$PROJECT_DIR$/redisconfig/redisconfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-server/user-server.iml" filepath="$PROJECT_DIR$/user-server/user-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul01/zuul01.iml" filepath="$PROJECT_DIR$/zuul01/zuul01.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul02/zuul02.iml" filepath="$PROJECT_DIR$/zuul02/zuul02.iml" />
     </modules>

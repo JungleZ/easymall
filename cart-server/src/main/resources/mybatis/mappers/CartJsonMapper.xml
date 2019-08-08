@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.CartJsonMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.CartJson" >
+        <result column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="cn.tedu.pojo.CartJson" extends="BaseResultMap" >
+        <result column="json" property="json" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <sql id="Blob_Column_List" >
+        json
+    </sql>
+    <insert id="insert" parameterType="cn.tedu.pojo.CartJson" >
+        insert into tb_cart_json (user_id, created, updated,
+        json)
+        values (#{userId,jdbcType=BIGINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},
+        #{json,jdbcType=LONGVARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.CartJson" >
+        insert into tb_cart_json
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+            <if test="json != null" >
+                json,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+            <if test="json != null" >
+                #{json,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

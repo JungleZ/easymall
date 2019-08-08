@@ -6,19 +6,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cart-server" />
+        <module name="common-redisconfig" />
         <module name="common-resources" />
+        <module name="coupon-server" />
         <module name="eurake-server1" />
         <module name="eurake-server2" />
+        <module name="goods-server" />
+        <module name="goods-service" />
+        <module name="menber-server" />
+        <module name="menberserver" />
+        <module name="order-server" />
+        <module name="receiver-server" />
+        <module name="redisconfig" />
+        <module name="user-server" />
         <module name="zuul01" />
         <module name="zuul02" />
         <module name="zuull" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cart-server" target="1.8" />
+      <module name="common-redisconfig" target="1.8" />
       <module name="common-resources" target="1.8" />
+      <module name="coupon-server" target="1.8" />
       <module name="easymall" target="1.8" />
       <module name="eurake-server1" target="1.8" />
       <module name="eurake-server2" target="1.8" />
+      <module name="goods-server" target="1.8" />
+      <module name="goods-service" target="1.8" />
+      <module name="menber-server" target="1.8" />
+      <module name="menberserver" target="1.8" />
+      <module name="order-server" target="1.8" />
+      <module name="receiver-server" target="1.8" />
+      <module name="redisconfig" target="1.8" />
+      <module name="user-server" target="1.8" />
       <module name="zuul01" target="1.8" />
       <module name="zuul02" target="1.8" />
       <module name="zuull" target="1.8" />

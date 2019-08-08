@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.MenberMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.Member" >
+        <result column="id" property="id" jdbcType="TINYINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="detail" property="detail" jdbcType="VARCHAR" />
+        <result column="rate" property="rate" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="insert" parameterType="cn.tedu.pojo.Member" >
+        insert into tb_member (id, name, detail,
+        rate, created, updated
+        )
+        values (#{id,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR},
+        #{rate,jdbcType=TINYINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.Member" >
+        insert into tb_member
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="detail != null" >
+                detail,
+            </if>
+            <if test="rate != null" >
+                rate,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=TINYINT},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null" >
+                #{detail,jdbcType=VARCHAR},
+            </if>
+            <if test="rate != null" >
+                #{rate,jdbcType=TINYINT},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

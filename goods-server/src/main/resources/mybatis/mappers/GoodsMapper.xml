@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.CartMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.Goods" >
+        <result column="id" property="id" jdbcType="BIGINT" />
+        <result column="goods_cat_id" property="goodsCatId" jdbcType="INTEGER" />
+        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <result column="color" property="color" jdbcType="VARCHAR" />
+        <result column="size" property="size" jdbcType="VARCHAR" />
+        <result column="stock" property="stock" jdbcType="BIGINT" />
+        <result column="market_price" property="marketPrice" jdbcType="BIGINT" />
+        <result column="activiry_price" property="activiryPrice" jdbcType="BIGINT" />
+        <result column="sale_num" property="saleNum" jdbcType="BIGINT" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="insert" parameterType="cn.tedu.pojo.Goods" >
+        insert into tb_goods (id, goods_cat_id, product_id,
+        color, size, stock,
+        market_price, activiry_price, sale_num,
+        status, created, updated
+        )
+        values (#{id,jdbcType=BIGINT}, #{goodsCatId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER},
+        #{color,jdbcType=VARCHAR}, #{size,jdbcType=VARCHAR}, #{stock,jdbcType=BIGINT},
+        #{marketPrice,jdbcType=BIGINT}, #{activiryPrice,jdbcType=BIGINT}, #{saleNum,jdbcType=BIGINT},
+        #{status,jdbcType=TINYINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.Goods" >
+        insert into tb_goods
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="goodsCatId != null" >
+                goods_cat_id,
+            </if>
+            <if test="productId != null" >
+                product_id,
+            </if>
+            <if test="color != null" >
+                color,
+            </if>
+            <if test="size != null" >
+                size,
+            </if>
+            <if test="stock != null" >
+                stock,
+            </if>
+            <if test="marketPrice != null" >
+                market_price,
+            </if>
+            <if test="activiryPrice != null" >
+                activiry_price,
+            </if>
+            <if test="saleNum != null" >
+                sale_num,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="goodsCatId != null" >
+                #{goodsCatId,jdbcType=INTEGER},
+            </if>
+            <if test="productId != null" >
+                #{productId,jdbcType=INTEGER},
+            </if>
+            <if test="color != null" >
+                #{color,jdbcType=VARCHAR},
+            </if>
+            <if test="size != null" >
+                #{size,jdbcType=VARCHAR},
+            </if>
+            <if test="stock != null" >
+                #{stock,jdbcType=BIGINT},
+            </if>
+            <if test="marketPrice != null" >
+                #{marketPrice,jdbcType=BIGINT},
+            </if>
+            <if test="activiryPrice != null" >
+                #{activiryPrice,jdbcType=BIGINT},
+            </if>
+            <if test="saleNum != null" >
+                #{saleNum,jdbcType=BIGINT},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+

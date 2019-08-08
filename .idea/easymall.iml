@@ -160,5 +160,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.12" level="project" />
   </component>
 </module>

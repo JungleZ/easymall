@@ -2,9 +2,17 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cart-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/coupon-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurake-server1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurake-server2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/goods-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menber-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/receiver-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redisconfig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul01" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul02" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

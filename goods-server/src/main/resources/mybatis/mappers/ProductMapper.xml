@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="cn.tedu.pojo.Product" >
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="detail" property="detail" jdbcType="VARCHAR" />
+        <result column="imgdesc" property="imgdesc" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="cn.tedu.pojo.Product" extends="BaseResultMap" >
+        <result column="imgs" property="imgs" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <sql id="Blob_Column_List" >
+        imgs
+    </sql>
+    <insert id="insert" parameterType="cn.tedu.pojo.Product" >
+        insert into tb_product (id, category_id, name,
+        title, detail, imgdesc,
+        status, created, updated,
+        imgs)
+        values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+        #{title,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{imgdesc,jdbcType=VARCHAR},
+        #{status,jdbcType=TINYINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},
+        #{imgs,jdbcType=LONGVARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="cn.tedu.pojo.Product" >
+        insert into tb_product
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="categoryId != null" >
+                category_id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="title != null" >
+                title,
+            </if>
+            <if test="detail != null" >
+                detail,
+            </if>
+            <if test="imgdesc != null" >
+                imgdesc,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="created != null" >
+                created,
+            </if>
+            <if test="updated != null" >
+                updated,
+            </if>
+            <if test="imgs != null" >
+                imgs,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="categoryId != null" >
+                #{categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null" >
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null" >
+                #{detail,jdbcType=VARCHAR},
+            </if>
+            <if test="imgdesc != null" >
+                #{imgdesc,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="created != null" >
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null" >
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imgs != null" >
+                #{imgs,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
