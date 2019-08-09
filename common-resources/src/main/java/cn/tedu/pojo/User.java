@@ -6,6 +6,7 @@ import java.util.Date;
  * 用户
  */
 public class User {
+    //id
     private Long id;
 
     private String name;
