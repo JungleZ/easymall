@@ -6,12 +6,24 @@ import java.util.Date;
  * 购物车json
  */
 public class CartJson {
+    /**
+     * 每个用户对应一个购物车
+     */
     private Long userId;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
+    /**
+     * 购物车字符串
+     */
     private String json;
 
     public Long getUserId() {

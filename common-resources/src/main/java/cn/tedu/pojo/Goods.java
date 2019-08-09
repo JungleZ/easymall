@@ -6,28 +6,64 @@ import java.util.Date;
  * 商品详情
  */
 public class Goods {
+    /**
+     * id
+     */
     private Long id;
 
+    /**
+     * 商品的分类
+     */
     private Integer goodsCatId;
 
+    /**
+     * 关联商品的基本描述
+     */
     private Integer productId;
 
+    /**
+     * 颜色
+     */
     private String color;
 
+    /**
+     * 尺码
+     */
     private String size;
 
+    /**
+     * 库存
+     */
     private Long stock;
 
+    /**
+     * 市场价
+     */
     private Long marketPrice;
 
-    private Long activiryPrice;
+    /**
+     *  活动价
+     */
+    private Long activityPrice;
 
+    /**
+     * 销售总数
+     */
     private Long saleNum;
 
-    private Byte status;
+    /**
+     * 商品的状态：0.下架，1.秒杀，2.团购，3.活动促销
+     */
+    private Integer status;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
     public Long getId() {
@@ -87,11 +123,11 @@ public class Goods {
     }
 
     public Long getActiviryPrice() {
-        return activiryPrice;
+        return activityPrice;
     }
 
-    public void setActiviryPrice(Long activiryPrice) {
-        this.activiryPrice = activiryPrice;
+    public void setActiviryPrice(Long activityPrice) {
+        this.activityPrice = activityPrice;
     }
 
     public Long getSaleNum() {
@@ -102,11 +138,11 @@ public class Goods {
         this.saleNum = saleNum;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

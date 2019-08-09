@@ -14,29 +14,56 @@ public class User {
 
     private Date birthday;
 
+    /**
+     * 昵称
+     */
     private String nickname;
 
+    /**
+     * 头像
+     */
     private String img;
 
     private String phone;
 
+    /**
+     * 随机盐值
+     */
     private String salt;
 
     private String username;
 
     private String password;
 
+    /**
+     * 积分
+     */
     private Integer points;
 
+    /**
+     * 钱包
+     */
     private Integer purse;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
+    /**
+     * 默认地址
+     */
     private String defaultReceiver;
 
-    private Byte memberId;
+    /**
+     * 关联会员
+     */
+    private Integer memberId;
 
     public Long getId() {
         return id;
@@ -158,11 +185,11 @@ public class User {
         this.defaultReceiver = defaultReceiver == null ? null : defaultReceiver.trim();
     }
 
-    public Byte getMemberId() {
+    public Integer getMemberId() {
         return memberId;
     }
 
-    public void setMemberId(Byte memberId) {
+    public void setMemberId(Integer memberId) {
         this.memberId = memberId;
     }
 }

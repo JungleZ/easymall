@@ -6,6 +6,7 @@ import java.util.Date;
  * 购物车
  */
 public class Cart {
+    //id
     private Long id;
 
     private Long userId;

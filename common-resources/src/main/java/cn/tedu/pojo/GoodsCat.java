@@ -8,18 +8,39 @@ import java.util.Date;
 public class GoodsCat {
     private Integer id;
 
+    /**
+     * 上级分类
+     */
     private Integer parentId;
 
+    /**
+     * 分类名称
+     */
     private String name;
 
-    private Byte status;
+    /**
+     * 分类状态：0.不可用，1.可用
+     */
+    private Integer status;
 
-    private Byte isParent;
+    /**
+     * 是否是第一级分类
+     */
+    private Integer isParent;
 
-    private Byte sortOrder;
+    /**
+     * 同级分类间依据什么排序
+     */
+    private Integer sortOrder;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
     public Integer getId() {
@@ -46,27 +67,27 @@ public class GoodsCat {
         this.name = name == null ? null : name.trim();
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public Byte getIsParent() {
+    public Integer getIsParent() {
         return isParent;
     }
 
-    public void setIsParent(Byte isParent) {
+    public void setIsParent(Integer isParent) {
         this.isParent = isParent;
     }
 
-    public Byte getSortOrder() {
+    public Integer getSortOrder() {
         return sortOrder;
     }
 
-    public void setSortOrder(Byte sortOrder) {
+    public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
 

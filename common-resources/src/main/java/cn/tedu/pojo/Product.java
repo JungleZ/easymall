@@ -6,24 +6,54 @@ import java.util.Date;
  *商品
  */
 public class Product {
+    /**
+     * 自增主键
+     */
     private Integer id;
 
+    /**
+     * 分类
+     */
     private Integer categoryId;
 
+    /**
+     * 商品的名字
+     */
     private String name;
 
+    /**
+     * 商品名字 + 商品特点
+     */
     private String title;
 
+    /**
+     * 商品描述
+     */
     private String detail;
 
+    /**
+     * 商品描述图片
+     */
     private String imgdesc;
 
-    private Byte status;
+    /**
+     * 商品状态：0.下架，1.上架
+     */
+    private Integer status;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
+    /**
+     * 多张商品图片路径，以";" 分开
+     */
     private String imgs;
 
     public Integer getId() {
@@ -74,11 +104,11 @@ public class Product {
         this.imgdesc = imgdesc == null ? null : imgdesc.trim();
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

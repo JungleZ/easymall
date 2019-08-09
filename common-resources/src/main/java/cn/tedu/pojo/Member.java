@@ -6,23 +6,35 @@ import java.util.Date;
  * 会员
  */
 public class Member {
-    private Byte id;
+    private Integer id;
 
+    /**
+     * 会员名：白银，黄金，铂金，砖石
+     */
     private String name;
 
     private String detail;
 
-    private Byte rate;
+    /**
+     * 等级：1.白银，2.黄金，3.铂金，4.砖石
+     */
+    private Integer rate;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,11 +54,11 @@ public class Member {
         this.detail = detail == null ? null : detail.trim();
     }
 
-    public Byte getRate() {
+    public Integer getRate() {
         return rate;
     }
 
-    public void setRate(Byte rate) {
+    public void setRate(Integer rate) {
         this.rate = rate;
     }
 

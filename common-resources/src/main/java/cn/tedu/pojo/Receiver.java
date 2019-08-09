@@ -6,26 +6,59 @@ import java.util.Date;
  * 收货地址
  */
 public class Receiver {
+    /**
+     *
+     */
     private String id;
 
+    /**
+     * 收货人姓名
+     */
     private String name;
 
+    /**
+     * 收货人电话
+     */
     private String tel;
 
+    /**
+     * 省
+     */
     private String province;
 
+    /**
+     * 市
+     */
     private String city;
 
+    /**
+     * 区
+     */
     private String district;
 
+    /**
+     * 详细地址，包括省市区
+     */
     private String address;
 
+    /**
+     * 邮编
+     */
     private String postal;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
+    /**
+     * 关联用户id
+     */
     private Long userId;
 
     public String getId() {

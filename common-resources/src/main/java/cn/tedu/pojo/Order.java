@@ -6,46 +6,115 @@ import java.util.Date;
  * 订单商品
  */
 public class Order {
+    /**
+     * 订单id
+     */
     private String id;
 
+    /**
+     * 用户id
+     */
     private Long userId;
 
+    /**
+     * 收货人名字
+     */
     private String receiver;
 
+    /**
+     * 收货人电话
+     */
     private String tel;
 
+    /**
+     * 从哪里发货
+     */
     private String addressFrom;
 
+    /**
+     * 送货目的地
+     */
     private String addressTo;
 
+    /**
+     * 收货人的备注
+     */
     private String message;
 
+    /**
+     * 订单商品的总价
+     */
     private Integer sum;
 
+    /**
+     * 运费，*100
+     */
     private Integer postMoney;
 
+    /**
+     * 实付多少钱，*100
+     */
     private Integer realPay;
 
-    private Byte payType;
+    /**
+     * 支付类型：1.支付宝，2.微信，3.到付
+     */
+    private Integer payType;
 
-    private Byte status;
+    /**
+     * 0.创建订单，待支付
+     * 1.支付订单，待发货
+     * 2.已发货，待接收
+     * 3.已接收，待确认
+     * 4.已确认，待评价
+     * 5.已评价，订单完成
+     * 6.未支付，订单关闭
+     */
+    private Integer status;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
+    /**
+     * 支付时间
+     */
     private Date payTime;
 
+    /**
+     * 发货时间
+     */
     private Date consignTime;
 
+    /**
+     * 收货时间
+     */
     private Date receiptTime;
 
+    /**
+     * 订单关闭时间
+     */
     private Date closed;
 
+    /**
+     * 订单完成时间
+     */
     private Date finished;
 
-    private Byte isInvoice;
+    /**
+     * 是否需要发票
+     */
+    private Integer isInvoice;
 
+    /**
+     * 发票id
+     */
     private String invoiceId;
 
     public String getId() {
@@ -128,19 +197,19 @@ public class Order {
         this.realPay = realPay;
     }
 
-    public Byte getPayType() {
+    public Integer getPayType() {
         return payType;
     }
 
-    public void setPayType(Byte payType) {
+    public void setPayType(Integer payType) {
         this.payType = payType;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -200,11 +269,11 @@ public class Order {
         this.finished = finished;
     }
 
-    public Byte getIsInvoice() {
+    public Integer getIsInvoice() {
         return isInvoice;
     }
 
-    public void setIsInvoice(Byte isInvoice) {
+    public void setIsInvoice(Integer isInvoice) {
         this.isInvoice = isInvoice;
     }
 

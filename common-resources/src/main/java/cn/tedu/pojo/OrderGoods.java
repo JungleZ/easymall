@@ -3,23 +3,47 @@ package cn.tedu.pojo;
 import java.util.Date;
 
 /**
- * 订单商品
+ * 订单商品，一个订单对应多个订单商品
  */
 public class OrderGoods {
+    /**
+     * 关联的订单
+     */
     private String orderId;
 
+    /**
+     * 关联的商品id
+     */
     private Long goodsId;
 
+    /**
+     * 买多少个此商品
+     */
     private Integer num;
 
+    /**
+     * 此商品的总价 = num * unitPrice
+     */
     private Long total;
 
+    /**
+     * 此商品单价，*100
+     */
     private Long unitPrice;
 
+    /**
+     * 图片，取第一张图片
+     */
     private String img;
 
+    /**
+     * 创建时间
+     */
     private Date created;
 
+    /**
+     * 更新时间
+     */
     private Date updated;
 
     public String getOrderId() {
