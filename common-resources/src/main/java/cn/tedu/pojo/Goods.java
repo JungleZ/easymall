@@ -52,7 +52,7 @@ public class Goods {
     private Long saleNum;
 
     /**
-     * 商品的状态：0.下架，1.秒杀，2.团购，3.活动促销
+     * 商品的状态：0.下架，1.正常，2.秒杀，3.团购，4.活动促销
      */
     private Integer status;
 

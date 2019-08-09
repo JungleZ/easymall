@@ -10,9 +10,9 @@ spring:
 #引入druid数据源,我的是8.0.15所以driver有所不同5.5的请用com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mymall?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    url: jdbc:mysql://176.114.24.87:3306/mymall?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
     username: root
-    password: 123
+    password: root
 eureka:
   client:
     serviceUrl:
