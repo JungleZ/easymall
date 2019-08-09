@@ -20,6 +20,6 @@ eureka:
 #mybatis
 mybatis:
   mapper-locations: classpath:/mybatis/mappers/*.xml
-  type-aliases-package: com.jt.pojo
+  type-aliases-package: cn.tedu.pojo
   configuration:
     map-underscore-to-camel-case: true
