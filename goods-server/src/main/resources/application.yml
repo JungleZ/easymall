@@ -23,3 +23,6 @@ mybatis:
   type-aliases-package: cn.tedu.pojo
   configuration:
     map-underscore-to-camel-case: true
+#es
+es:
+  nodes: 10.42.181.129:9300,10.42.86.124:9300,10.42.118.204:9300

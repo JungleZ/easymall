@@ -13,6 +13,17 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <!--springboot 自动配置 spring data 封装了2.X版本的es -->
+            <version>5.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>5.5.2</version>
+        </dependency>
+        <dependency>
             <groupId>cn.tedu</groupId>
             <artifactId>common-resources</artifactId>
             <version>0.0.1-SNAPSHOT</version>
