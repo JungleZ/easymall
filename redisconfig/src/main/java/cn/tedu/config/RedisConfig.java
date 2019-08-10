@@ -61,5 +61,8 @@ public class RedisConfig {
 
     }
 
-
+    @Bean
+    public Jedis jedis() {
+        return new Jedis("176.114.24.110",6379);
+    }
 }
