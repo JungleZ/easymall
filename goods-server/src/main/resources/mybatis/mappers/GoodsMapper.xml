@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.tedu.mapper.CartMapper">
+<mapper namespace="cn.tedu.mapper.GoodsMapper">
     <resultMap id="BaseResultMap" type="cn.tedu.pojo.Goods" >
         <result column="id" property="id" jdbcType="BIGINT" />
         <result column="goods_cat_id" property="goodsCatId" jdbcType="INTEGER" />
@@ -10,7 +10,7 @@
         <result column="size" property="size" jdbcType="VARCHAR" />
         <result column="stock" property="stock" jdbcType="BIGINT" />
         <result column="market_price" property="marketPrice" jdbcType="BIGINT" />
-        <result column="activiry_price" property="activiryPrice" jdbcType="BIGINT" />
+        <result column="activiry_price" property="activityPrice" jdbcType="BIGINT" />
         <result column="sale_num" property="saleNum" jdbcType="BIGINT" />
         <result column="status" property="status" jdbcType="TINYINT" />
         <result column="created" property="created" jdbcType="TIMESTAMP" />
