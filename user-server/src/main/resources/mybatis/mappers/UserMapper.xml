@@ -236,6 +236,30 @@
         <!--</trim>-->
     <!--</insert>-->
 
+    <select id="selectOne" parameterType="cn.tedu.pojo.User" resultType="cn.tedu.pojo.User">
+        select * from tb_user where id = #{userId}
+    </select>
+
+    <update id="update" parameterType="cn.tedu.pojo.User">
+        update tb_user
+        <set>
+            <if test="name != null">`name` = #{name}, </if>
+            <if test="gender != null">`gender` = #{gender}, </if>
+            <if test="nickname != null">`nickname` = #{nickname}, </if>
+            <if test="img != null">`img` = #{img}, </if>
+            <if test="phone != null">`phone` = #{phone}, </if>
+            <if test="salt != null">`salt` = #{salt}, </if>
+            <if test="username != null">`username` = #{username}, </if>
+            <if test="password != null">`password` = #{password}, </if>
+            <if test="points != null">`points` = #{points}, </if>
+            <if test="purse != null">`purse` = #{purse}, </if>
+            <if test="created != null">`created` = #{created}, </if>
+            <if test="updated != null">`updated` = #{updated}, </if>
+            <if test="defaultReceiver != null">`defaultReceiver` = #{defaultReceiver}, </if>
+            <if test="memberId != null">`member_id` = #{memberId}, </if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper> 
 
 
