@@ -2,6 +2,7 @@ package cn.tedu.config;
 
 import cn.tedu.pojo.User;
 
+
 public class UserTheadLocal {
     private static ThreadLocal<User> thread = new ThreadLocal<User>();
 
