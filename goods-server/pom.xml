@@ -33,6 +33,11 @@
             <artifactId>transport-netty4-client</artifactId>
             <version>5.5.2</version>
         </dependency>
+        <dependency>
+            <groupId>cn.tedu</groupId>
+            <artifactId>redisconfig</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
