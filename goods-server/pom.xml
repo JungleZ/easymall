@@ -28,6 +28,7 @@
             <artifactId>common-resources</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!--解决2.1.4不兼容elasticsearch的依赖-->
         <dependency>
             <groupId>org.elasticsearch.plugin</groupId>
             <artifactId>transport-netty4-client</artifactId>
@@ -38,7 +39,6 @@
             <artifactId>redisconfig</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
