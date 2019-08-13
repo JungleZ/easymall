@@ -3,6 +3,7 @@ package cn.tedu.service;
 import cn.tedu.mapper.GoodsCatMapper;
 import cn.tedu.mapper.GoodsMapper;
 import cn.tedu.mapper.ProductMapper;
+import cn.tedu.pojo.Goods;
 import cn.tedu.pojo.Product;
 import cn.tedu.utils.MapperUtil;
 import cn.tedu.vo.SearchResult;
@@ -26,8 +27,6 @@ import java.util.List;
 public class GoodsServiceImpl implements GoodsService {
     @Autowired
     private GoodsMapper goodsMapper;
-    @Autowired
-    private GoodsCatMapper goodsCatMapper;
     @Autowired
     private ProductMapper productMapper;
     @Autowired
@@ -81,5 +80,17 @@ public class GoodsServiceImpl implements GoodsService {
                 e.printStackTrace();
             }
         }
+    }
+
+    //需求不明确，二级分类查询写死，返回固定值
+    @Override
+    public String queryCategoryById(Integer categoryId) {
+        return "T恤";
+    }
+
+    @Override
+    public void saveGoods(Goods goods) {
+        goodsMapper.insert(goods);
+
     }
 }

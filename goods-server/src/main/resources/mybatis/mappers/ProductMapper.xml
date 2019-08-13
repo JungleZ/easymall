@@ -24,11 +24,12 @@
         title, detail, imgdesc,
         status, created, updated,
         imgs)
-        values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+        values (null, #{categoryId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
         #{title,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{imgdesc,jdbcType=VARCHAR},
         #{status,jdbcType=TINYINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},
         #{imgs,jdbcType=LONGVARCHAR})
     </insert>
+
     <insert id="insertSelective" parameterType="cn.tedu.pojo.Product" >
         insert into tb_product
         <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -100,16 +101,16 @@
     <select id="queryAll" resultMap="BaseResultMap" >
         select * from tb_product
     </select>
-</mapper> 
+
+    <!--查询所有的商品数量 count -->
+    <select id="queryCount" resultType="int">
+		select count(id) from t_product;
+	</select>
+
+    <!-- 分页查询  -->
+    <select id="pageQuery" resultType="cn.tedu.pojo.Product">
+		select * from t_product limit #{start},#{pageSize}
+	</select>
 
 
-
-
-
-
-
-
-
-
-
-
+</mapper>

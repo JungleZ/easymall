@@ -23,7 +23,7 @@
         market_price, activiry_price, sale_num,
         status, created, updated
         )
-        values (#{id,jdbcType=BIGINT}, #{goodsCatId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER},
+        values (null, #{goodsCatId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER},
         #{color,jdbcType=VARCHAR}, #{size,jdbcType=VARCHAR}, #{stock,jdbcType=BIGINT},
         #{marketPrice,jdbcType=BIGINT}, #{activiryPrice,jdbcType=BIGINT}, #{saleNum,jdbcType=BIGINT},
         #{status,jdbcType=TINYINT}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}
