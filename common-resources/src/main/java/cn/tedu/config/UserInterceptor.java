@@ -3,6 +3,7 @@ package cn.tedu.config;
 import cn.tedu.pojo.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import redis.clients.jedis.Jedis;
@@ -10,7 +11,7 @@ import redis.clients.jedis.Jedis;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+@Component
 public class UserInterceptor implements HandlerInterceptor {
     private static ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
