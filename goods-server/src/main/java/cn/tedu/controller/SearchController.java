@@ -2,6 +2,7 @@ package cn.tedu.controller;
 
 import cn.tedu.pojo.Product;
 import cn.tedu.service.GoodsServiceImpl;
+import cn.tedu.vo.SearchResult;
 import cn.tedu.vo.SysResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +18,8 @@ public class SearchController {
     @RequestMapping("/goods/selectList/{keyword}/{shaixuan}/{currentPage}/{pageSize}")
     public SysResult SearchProducts(@PathVariable String keyword, @PathVariable String shaixuan, @PathVariable String currentPage, @PathVariable String pageSize ){
         try {
-            List<Product> list = goodsService.queryProduct(keyword,shaixuan,currentPage,pageSize);
-            return SysResult.build(200,"搜索成功",list);
+            SearchResult result = goodsService.queryProduct(keyword,shaixuan,currentPage,pageSize);
+            return SysResult.build(200,"搜索成功",result);
         }catch (Exception e){
             e.printStackTrace();
             return SysResult.build(201,"搜索失败",null);
@@ -26,7 +27,7 @@ public class SearchController {
     }
     @RequestMapping("save")
     public String createIndex(){
-        goodsService.createIndex("emindex");
+        goodsService.createIndex();
         return "success";
     }
 }
