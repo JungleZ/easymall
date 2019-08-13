@@ -1,6 +1,7 @@
 package cn.tedu.mapper;
 
 
+import cn.tedu.pojo.CartJson;
 import cn.tedu.pojo.GoodsCat;
 
 public interface CartJsonMapper {
@@ -9,4 +10,5 @@ public interface CartJsonMapper {
 
     int insertSelective(GoodsCat record);
 
+    void update(CartJson cartJson);
 }
