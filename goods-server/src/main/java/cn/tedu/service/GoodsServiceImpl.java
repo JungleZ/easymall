@@ -33,6 +33,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Autowired
     private TransportClient client;
 
+
     @Override
     public SearchResult queryProduct(String keyword, String shaixuan, String currentPage, String pageSize) {
         //构造一个查询条件

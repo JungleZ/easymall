@@ -2,8 +2,8 @@ package cn.tedu.vo;
 
 import cn.tedu.pojo.Product;
 
-import java.util.Date;
 import java.util.List;
+
 
 public class SearchResult {
     /**
