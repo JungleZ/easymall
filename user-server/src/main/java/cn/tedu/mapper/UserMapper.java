@@ -24,5 +24,4 @@ public interface UserMapper {
     User selectOne(Long userId);
 
     void update(User user);
-
 }

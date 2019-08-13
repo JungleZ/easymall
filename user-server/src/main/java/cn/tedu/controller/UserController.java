@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -26,45 +27,52 @@ public class UserController {
         return userService.selectAll();
     }
 
-    @RequestMapping("/user/login")
+    @RequestMapping("/login")
     public SysResult doLogin(User user, HttpServletRequest req, HttpServletResponse resp){
-        try{
-            String token = req.getHeader("token");
-            String returnUser = userService.loginUser(user,resp,token );
-            return SysResult.build(200,"ok",returnUser);
-        }catch (Exception e){
-            e.printStackTrace();
-            return SysResult.build(201,"fail",null);
-        }
+//        try{
+        String token = req.getHeader("token");
+        String returnUser = userService.loginUser(user,resp,token );
+        return SysResult.build(200,"ok",returnUser);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return SysResult.build(201,"fail",null);
+//        }
     }
 
-    @RequestMapping("/user/register")
+    @RequestMapping("/register")
     public SysResult doRegister(User user, String sms,HttpServletResponse resp){
-        try{
-            String returnUser = userService.registerUser(user,sms,resp);
-            return  SysResult.build(200,"ok",returnUser);
-        }catch (Exception e){
-            e.printStackTrace();
-            return SysResult.build(201,"fail",null);
-        }
+//        try{
+        String returnUser = userService.registerUser(user,sms,resp);
+        return  SysResult.build(200,"ok",returnUser);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return SysResult.build(201,"fail",null);
+//        }
     }
 
     @RequestMapping("/updatePassword")
-    public SysResult updatePassword(Long userId, String oldPassword, String newPassword) {
+    public SysResult updatePassword(Long userId, String oldPassword, String newPassword,HttpServletRequest request) {
 
         userService.updatePassword(userId,oldPassword,newPassword);
+        String token = request.getHeader("token");
+        if (jedis.get(token)!=null){
+            jedis.del(token);
+        }
         return SysResult.ok();
 
     }
     @RequestMapping("/updateNickName")
-    public SysResult updateNickName(Long userId,String Nickname){
+    public SysResult updateNickName(Long userId, String nickname, HttpServletRequest request){
+        userService.updateNickName(userId,nickname);
+        String token = request.getHeader("token");
+        if (jedis.get(token)!=null){
+            jedis.del(token);
+        }
 
-        userService.updateNickName(userId,Nickname);
         return SysResult.ok();
-
     }
 
-    @RequestMapping("/sms/getSms")
+    @RequestMapping("/sms")
     public SysResult sendSms(String phone) {
         String code = RandomUtils.Ramdom();
         try{
@@ -79,15 +87,27 @@ public class UserController {
     }
 
     @RequestMapping("/updatePhone")
-    public SysResult updatePhone(Long userId,String oldPhone,String sms,String newPhone,HttpServletResponse resp){
+    public SysResult updatePhone(Long userId,String oldPhone,String sms,String newPhone,HttpServletRequest request){
         try{
-            userService.updatePhone(userId,oldPhone,sms,newPhone);
-            resp.setHeader("token",null);
+            User user = userService.updatePhone(userId,oldPhone,sms,newPhone);
+            String token = request.getHeader("token");
+            if (jedis.get(token)!=null){
+                jedis.del(token);
+            }
             return SysResult.ok();
         }catch (Exception e){
             e.printStackTrace();
             return SysResult.build(201,"更改号码失败",null);
         }
+    }
+
+    @RequestMapping("/test3")
+    public String kb(){
+        jedis.set("name","ziheng");
+        System.out.println(jedis.get("name"));
+        jedis.flushAll();
+        System.out.println(jedis.get("name"));
+        return jedis.get("name");
     }
 
 }

@@ -139,101 +139,101 @@
     </insert>
 
     <!--<insert id="insert" parameterType="cn.tedu.pojo.User">-->
-        <!--insert into tb_user (id, username, password-->
-        <!--)-->
-        <!--values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}-->
-        <!--)-->
+    <!--insert into tb_user (id, username, password-->
+    <!--)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}-->
+    <!--)-->
     <!--</insert>-->
     <!--<insert id="insertSelective" parameterType="cn.tedu.pojo.User">-->
-        <!--insert into tb_user-->
-        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
-            <!--<if test="id != null">-->
-                <!--id,-->
-            <!--</if>-->
-            <!--<if test="username != null">-->
-                <!--username,-->
-            <!--</if>-->
-            <!--<if test="password != null">-->
-                <!--password,-->
-            <!--</if>-->
-        <!--</trim>-->
-        <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
-            <!--<if test="id != null">-->
-                <!--#{id,jdbcType=INTEGER},-->
-            <!--</if>-->
-            <!--<if test="username != null">-->
-                <!--#{username,jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="password != null">-->
-                <!--#{password,jdbcType=VARCHAR},-->
-            <!--</if>-->
-        <!--</trim>-->
+    <!--insert into tb_user-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+    <!--<if test="id != null">-->
+    <!--id,-->
+    <!--</if>-->
+    <!--<if test="username != null">-->
+    <!--username,-->
+    <!--</if>-->
+    <!--<if test="password != null">-->
+    <!--password,-->
+    <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+    <!--<if test="id != null">-->
+    <!--#{id,jdbcType=INTEGER},-->
+    <!--</if>-->
+    <!--<if test="username != null">-->
+    <!--#{username,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--<if test="password != null">-->
+    <!--#{password,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--</trim>-->
     <!--</insert>-->
     <!--<resultMap id="BaseResultMap" type="cn.tedu.pojo.User">-->
-        <!--<result column="id" jdbcType="BIGINT" property="id" />-->
-        <!--<result column="username" jdbcType="VARCHAR" property="username" />-->
-        <!--<result column="password" jdbcType="VARCHAR" property="password" />-->
-        <!--<result column="phone" jdbcType="VARCHAR" property="phone" />-->
-        <!--<result column="email" jdbcType="VARCHAR" property="email" />-->
-        <!--<result column="created" jdbcType="TIMESTAMP" property="created" />-->
-        <!--<result column="updated" jdbcType="TIMESTAMP" property="updated" />-->
+    <!--<result column="id" jdbcType="BIGINT" property="id" />-->
+    <!--<result column="username" jdbcType="VARCHAR" property="username" />-->
+    <!--<result column="password" jdbcType="VARCHAR" property="password" />-->
+    <!--<result column="phone" jdbcType="VARCHAR" property="phone" />-->
+    <!--<result column="email" jdbcType="VARCHAR" property="email" />-->
+    <!--<result column="created" jdbcType="TIMESTAMP" property="created" />-->
+    <!--<result column="updated" jdbcType="TIMESTAMP" property="updated" />-->
     <!--</resultMap>-->
     <!--<insert id="insert" parameterType="cn.tedu.pojo.User">-->
-        <!--insert into tb_user (id, username, password,-->
-        <!--phone, email, created,-->
-        <!--updated)-->
-        <!--values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},-->
-        <!--#{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP},-->
-        <!--#{updated,jdbcType=TIMESTAMP})-->
+    <!--insert into tb_user (id, username, password,-->
+    <!--phone, email, created,-->
+    <!--updated)-->
+    <!--values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},-->
+    <!--#{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP},-->
+    <!--#{updated,jdbcType=TIMESTAMP})-->
     <!--</insert>-->
     <!--<insert id="insertSelective" parameterType="cn.tedu.pojo.User">-->
-        <!--insert into tb_user-->
-        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
-            <!--<if test="id != null">-->
-                <!--id,-->
-            <!--</if>-->
-            <!--<if test="username != null">-->
-                <!--username,-->
-            <!--</if>-->
-            <!--<if test="password != null">-->
-                <!--password,-->
-            <!--</if>-->
-            <!--<if test="phone != null">-->
-                <!--phone,-->
-            <!--</if>-->
-            <!--<if test="email != null">-->
-                <!--email,-->
-            <!--</if>-->
-            <!--<if test="created != null">-->
-                <!--created,-->
-            <!--</if>-->
-            <!--<if test="updated != null">-->
-                <!--updated,-->
-            <!--</if>-->
-        <!--</trim>-->
-        <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
-            <!--<if test="id != null">-->
-                <!--#{id,jdbcType=BIGINT},-->
-            <!--</if>-->
-            <!--<if test="username != null">-->
-                <!--#{username,jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="password != null">-->
-                <!--#{password,jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="phone != null">-->
-                <!--#{phone,jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="email != null">-->
-                <!--#{email,jdbcType=VARCHAR},-->
-            <!--</if>-->
-            <!--<if test="created != null">-->
-                <!--#{created,jdbcType=TIMESTAMP},-->
-            <!--</if>-->
-            <!--<if test="updated != null">-->
-                <!--#{updated,jdbcType=TIMESTAMP},-->
-            <!--</if>-->
-        <!--</trim>-->
+    <!--insert into tb_user-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+    <!--<if test="id != null">-->
+    <!--id,-->
+    <!--</if>-->
+    <!--<if test="username != null">-->
+    <!--username,-->
+    <!--</if>-->
+    <!--<if test="password != null">-->
+    <!--password,-->
+    <!--</if>-->
+    <!--<if test="phone != null">-->
+    <!--phone,-->
+    <!--</if>-->
+    <!--<if test="email != null">-->
+    <!--email,-->
+    <!--</if>-->
+    <!--<if test="created != null">-->
+    <!--created,-->
+    <!--</if>-->
+    <!--<if test="updated != null">-->
+    <!--updated,-->
+    <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+    <!--<if test="id != null">-->
+    <!--#{id,jdbcType=BIGINT},-->
+    <!--</if>-->
+    <!--<if test="username != null">-->
+    <!--#{username,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--<if test="password != null">-->
+    <!--#{password,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--<if test="phone != null">-->
+    <!--#{phone,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--<if test="email != null">-->
+    <!--#{email,jdbcType=VARCHAR},-->
+    <!--</if>-->
+    <!--<if test="created != null">-->
+    <!--#{created,jdbcType=TIMESTAMP},-->
+    <!--</if>-->
+    <!--<if test="updated != null">-->
+    <!--#{updated,jdbcType=TIMESTAMP},-->
+    <!--</if>-->
+    <!--</trim>-->
     <!--</insert>-->
 
     <select id="selectOne" parameterType="cn.tedu.pojo.User" resultType="cn.tedu.pojo.User">

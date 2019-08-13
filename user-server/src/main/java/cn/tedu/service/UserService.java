@@ -15,7 +15,7 @@ public interface UserService {
 
     void updatePassword(Long userId, String oldPassword, String newPassword);
 
-    void updateNickName(Long userId, String Nickname);
+    void updateNickName(Long userId, String nickname);
 
-    void updatePhone(Long userId, String oldPhone, String sms,String newPhone);
+    User updatePhone(Long userId, String oldPhone, String sms,String newPhone);
 }

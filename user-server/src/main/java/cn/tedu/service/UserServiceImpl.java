@@ -41,11 +41,11 @@ public class UserServiceImpl implements UserService {
         user.setPassword(md5Pass);
         //查询redis
         String userByRedis = null;
-        if(!StringUtils.isEmpty(token)){
+        String jsonUser = jedis.get(token);
+        if(!StringUtils.isEmpty(jsonUser)){
             userByRedis = loginUserByRedis(user,token);
             System.out.println("redis查询！");
-        }
-        if(userByRedis==null){//如果reids没有，则查数据库
+        } else {//如果reids没有，则查数据库
             String userByDB = loginUserByDB(user,resp);
             System.out.println("数据库查询！");
             return userByDB;
@@ -85,9 +85,10 @@ public class UserServiceImpl implements UserService {
         try{
 //            String ticket="RT_TICKET"+System.currentTimeMillis()+user.getPhone();//登入key
             String userJsonByRedis = jedis.get(token);
-            if(StringUtils.isEmpty(userJsonByRedis)){
-                return null;
-            }
+//            if(StringUtils.isEmpty(userJsonByRedis)){
+//                return null;
+//
+//            }
             User readRedisUser = MapperUtil.MP.readValue(userJsonByRedis,user.getClass());
             if(user.getUsername().equals(readRedisUser.getName())||user.getUsername().equals(readRedisUser.getPhone())&&user.getPassword().equals(readRedisUser.getPassword())){
                 readRedisUser.setPassword("xxxxxx");
@@ -98,7 +99,8 @@ public class UserServiceImpl implements UserService {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return null;
+            throw new RuntimeException();
+//            return null;
         }
     }
 
@@ -145,8 +147,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updatePassword(Long userId,String oldPassword,String newPassword) {
         User user=userMapper.selectOne(userId);
-        if(user==null){
-            throw new ServiceException("该用户不存在");
+        if(newPassword==null){
+            throw new ServiceException("新密码不能为空");
         }
         if(!user.getPassword().equals(MD5Util.md5(oldPassword))){
             throw new ServiceException("旧密码错误");
@@ -162,28 +164,49 @@ public class UserServiceImpl implements UserService {
 
     //修改昵称
     @Override
-    public void updateNickName(Long userId, String Nickname){
+    public void updateNickName(Long userId, String nickname){
         User user=userMapper.selectOne(userId);
-        if(user==null){
-            throw new ServiceException("该用户不存在");
-        }
-        if(user.getNickname().equals(Nickname)){
-            throw new ServiceException("新昵称与旧昵称不能相同");
-        }
 
-        user.setNickname(Nickname);
-        user.setUpdated(new Date());
-        userMapper.update(user);
+        if(nickname==null){
+            throw new ServiceException("昵称不能为空");
+        }
+//        //||user.getNickname().equals(nickname)
+//        if(user.getNickname()!=null){
+//            throw new ServiceException("新昵称与旧昵称不能相同");
+//        }
+
+        if (user.getNickname()==null){
+            user.setNickname(nickname);
+            user.setUpdated(new Date());
+            userMapper.update(user);
+        }
+        if (user.getNickname().equals(nickname)){
+            throw new ServiceException("昵称不能重复！！");
+        }else {
+            user.setNickname(nickname);
+            user.setUpdated(new Date());
+            userMapper.update(user);
+        }
+//        try{
+//            String userJson = MapperUtil.MP.writeValueAsString(user);
+//            String token = response.getHeader("token");
+//            jedis.setex(token,-1,userJson);
+//            jedis.flushAll();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            throw new RuntimeException();
+//        }
+
     }
 
     //校对验证码
     @Override
     @Transactional
-    public void updatePhone(Long userId,String oldPhone,String sms,String newPhone){
+    public User updatePhone(Long userId,String oldPhone,String sms,String newPhone){
         User user=userMapper.selectOne(userId);
         String VerificationCode=jedis.get("sms"+oldPhone);
-        if (user==null){
-            throw new ServiceException("该用户不存在！！");
+        if (newPhone==null){
+            throw new ServiceException("手机号码不能为空");
         }
         if(oldPhone.equals(newPhone)){
             throw new ServiceException("新号码与旧号码不能相同！！");
@@ -200,6 +223,7 @@ public class UserServiceImpl implements UserService {
         user.setPhone(newPhone);
         user.setUpdated(new Date());
         userMapper.update(user);
+        return user;
 
     }
 
