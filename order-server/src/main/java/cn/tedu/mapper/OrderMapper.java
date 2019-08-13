@@ -1,16 +1,22 @@
 package cn.tedu.mapper;
 
-import cn.tedu.pojo.User;
-import org.apache.ibatis.annotations.Select;
+import cn.tedu.pojo.OrderDto;
 
 import java.util.List;
 
 public interface OrderMapper {
 
-    int insert(User record);
+//    void insert(OrderDto order);
 
-    int insertSelective(User record);
+    void insertSelective(OrderDto order);
 
+    void insertOrderGoods(OrderDto order);
 
+//    void submitOrders(String userId);
 
+    void deleteOrder(String id);
+
+    List<OrderDto> queryOrder(String id);
+
+    List<OrderDto> queryMyOrders(String userId);
 }
