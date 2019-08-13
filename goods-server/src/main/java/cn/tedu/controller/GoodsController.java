@@ -44,7 +44,7 @@ public class GoodsController {
      * @return
      */
 
-    @RequestMapping("/goods/insert")
+    @RequestMapping("/insert")
     public SysResult saveProduct(Goods goods) {
         try{
             goodsService.saveGoods(goods);

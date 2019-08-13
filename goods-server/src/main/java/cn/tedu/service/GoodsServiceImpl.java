@@ -82,10 +82,10 @@ public class GoodsServiceImpl implements GoodsService {
         }
     }
 
-    //需求不明确，二级分类查询写死，返回固定值
+    //需求不明确，二级分类查询写死为“普通商品”，返回固定值
     @Override
     public String queryCategoryById(Integer categoryId) {
-        return "T恤";
+        return "普通商品";
     }
 
     @Override
